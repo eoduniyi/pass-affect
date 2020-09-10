@@ -10,6 +10,6 @@ Library to help model affect passing during Human-Robot-Interactions
 * [Anonymization:]() Please ensure that your submission conforms to the Anonymization Policy. Consistent with CHI 2020, papers that violate the anonymization rule will be desk-rejected, so please carefully check your paper and supplementary material on PCS before final submission.
 
 **CHI2021 Project Submissions:**
-1. [pass-affect-0: Analyzing the Effect of Gesturing on Comprehension andRetention During HRI]() 
+1. [pass-affect-0: Analyzing the Effect of Gesturing on Comprehension and Retention During Human-Robot-Interaction]() 
 
-2. [pass-affect-1: Open Framework for Modeling Affect Passing DuringHuman-Robot-Interaction]()
+2. [pass-affect-1: Open Framework for Modeling Affect Passing During Human-Robot-Interaction]()
