@@ -1,6 +1,8 @@
 # pass-affect
 Library to help model affect passing during Human-Robot-Interactions
 
+![pap1](/pass-affect-prototype-1.png)
+
 
 <b>CHI2021:</b>
 * Online Submission: Made to Precision Conference
