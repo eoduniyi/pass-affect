@@ -29,12 +29,9 @@ def simulae(n):
     return(sum(trials)/n)
 ```
 
-
-
 ## Basics of probability and statistics
 
 *Example:*
-
 ```python
 sum = sum(p)
 avg = sum/len()
@@ -43,7 +40,6 @@ print('The avg of the random numbers is: ', avg)
 ```
 
 *Example: Calculating probablity*
-
 ```python
 event = 1
 ss = 2
@@ -52,7 +48,6 @@ print(round(prov_event, 2))
 ```
 
 *Example: Functions of probabilities*
-
 ```python
 def event_probability(event_outcomes, sample_space):
   probability = (event_outcomes/sample_space) * 100
@@ -85,16 +80,11 @@ print(str(probability) + '%')
 
 **Beliefs** - approximately computed marginal probabilities:
 
-`Approx(p(x_1, ..., x_n)) `
-
 ```python
-
-
-
+Approx(p(x_1, ..., x_n)) 
 ```
 
 ----
-
 # Parallel Programming in Python
 
 ## What is parallel programming?
@@ -125,7 +115,6 @@ print(str(probability) + '%')
   #### MPI in `python` (mpi4py)
 
   **Communicators and Ranks**
-
   ```python
   from mpi4py import MPI
   
@@ -137,7 +126,6 @@ print(str(probability) + '%')
   **Point-to-point Communication**
 
   *Example A*
-
   ```python
   from mi4py import MPI
   import numpy
@@ -157,7 +145,6 @@ print(str(probability) + '%')
   ```
 
   *Example B*
-
   ```python
   from mi4py import MPI
   import numpy
@@ -175,7 +162,6 @@ print(str(probability) + '%')
   ```
 
   *Example C*
-
   ```python
   from mi4py import MPI
   import numpy
@@ -192,7 +178,6 @@ print(str(probability) + '%')
   ```
 
   *Example D*
-
   ```python
   from mi4py import MPI
   import numpy
@@ -211,7 +196,6 @@ print(str(probability) + '%')
   ```
 
   *Example E*
-
   ```python
   from mi4py import MPI
   import numpy as np
@@ -241,7 +225,6 @@ print(str(probability) + '%')
 
   *Example F*: Broadcasting:
   `Broadcast` (one-to-many): `Clone` me to others.
-
   ```python
   import mpi4py as MPI
   import numpy as np
@@ -293,7 +276,7 @@ print(str(probability) + '%')
   else: 
     numdata = None
     
-  # broadcast numData and aallocate array on other ranks>
+  # Broadcast numData and aallocate array on other ranks>
   numData = comm.bcast(numData, root=0)
   if rank != 0
   	data = np.empty(numData, dtype='d')
@@ -305,7 +288,6 @@ print(str(probability) + '%')
 
   *Example: Scatter*:
   (one-to-many): `Divide` me into others*
-
   ```python
   from mpi4py import MPI
   import numpy as np
@@ -328,7 +310,6 @@ print(str(probability) + '%')
 
   *Example: Gathering*:
   (many-to-one): Bring others into me
-
   ```python
   import mpi4py as MPI
   import numpy as np
@@ -355,7 +336,6 @@ print(str(probability) + '%')
 
   *Example: Reduction:*
   (many-to-one): `Aggregate`, `Collapse`, `Collect`, Form me from others.
-
   ```python
   import mpi4py as MPI
   import numpy as np
@@ -370,11 +350,11 @@ print(str(probability) + '%')
   
   print(' Rank: ', rank, ' value = ', value)
   
-  # initialize the np arrays that will store the results:
+  # Initialize the np arrays that will store the results:
   value_sum = np.array(0.0, 'd') 
   value_max = np.array(0.0, 'd')
   
-  # perform the reductions:
+  # Perform the reductions:
   comm.Reduce(value, value_sum, op=MPI.SUM, root=0)
   comm.Reduce(value, value_max, op=MPI.MAX, root=0)
   
@@ -383,26 +363,27 @@ print(str(probability) + '%')
     print(' Rank 0: value_max ', value_max)
   ```
 
-*Example: Light-Gather*
+  *Example: Light-Gather*
+  ```python
+  # fast-light-gather  
+  recvbuf = None
+  if rank == 0:
+    recvbuf = np.empty([size, len(piece)], dtype='f8')
+  comm.Gather(piece   , recvbuf, root=0)
+  if rank == 0:
+    print(recvbuf)
 
-```python
-# fast-light-gather  
-recvbuf = None
-if rank == 0:
-  recvbuf = np.empty([size, len(piece)], dtype='f8')
-comm.Gather(piece   , recvbuf, root=0)
-if rank == 0:
-  print(recvbuf)
-  
-# slow-light-gather  
-recvbuf = comm.gather(pieces)
-if rank == 0:
-  print(recvbuf)
-```
+  # slow-light-gather  
+  recvbuf = comm.gather(pieces)
+  if rank == 0:
+    print(recvbuf)
+  ```
 
 **Question for Reader:**
-
 How does parallel programming relate to belief propagation?
+
+<i>Best,
+Erick@iig</i>
 
 
 
