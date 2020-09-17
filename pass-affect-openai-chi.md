@@ -42,8 +42,6 @@ print('The sum of the random numbers is: ', sum)
 print('The avg of the random numbers is: ', avg)
 ```
 
-
-
 *Example: Calculating probablity*
 
 ```python
@@ -65,8 +63,6 @@ event = 1
 probability = event_probability(event, ss)
 print(str(probability) + '%')
 ```
-
-
 
 ## Belief Propagation
 
@@ -91,19 +87,15 @@ print(str(probability) + '%')
 
 `Approx(p(x_1, ..., x_n)) `
 
-
-
 ```python
 
 
 
 ```
 
-
-
 ----
 
-# Parellel Programming in Python
+# Parallel Programming in Python
 
 ## What is parallel programming?
 
@@ -218,8 +210,6 @@ print(str(probability) + '%')
       print('On process 1, data is ', idata)
   ```
 
-  
-
   *Example E*
 
   ```python
@@ -249,10 +239,7 @@ print(str(probability) + '%')
 
   **Note:** There is some importance to the difference between lower and uppercase functions
 
-  
-
   *Example F*: Broadcasting:
-
   `Broadcast` (one-to-many): `Clone` me to others.
 
   ```python
@@ -273,8 +260,6 @@ print(str(probability) + '%')
     print(d)
     
   ```
-
-  
 
   ```python
   from mpi4py import MPI
@@ -318,10 +303,7 @@ print(str(probability) + '%')
   print('Rank: ', rank, ' , data rceieved ', data)
   ```
 
-  
-
   *Example: Scatter*:
-
   (one-to-many): `Divide` me into others*
 
   ```python
@@ -344,13 +326,8 @@ print(str(probability) + '%')
   print('Rank: ', rank, ' , recvbuf recieved: ', recvbuf)
   ```
 
-  
-
   *Example: Gathering*:
-
   (many-to-one): Bring others into me
-
-  
 
   ```python
   import mpi4py as MPI
@@ -377,10 +354,9 @@ print(str(probability) + '%')
   ```
 
   *Example: Reduction:*
-
   (many-to-one): `Aggregate`, `Collapse`, `Collect`, Form me from others.
 
-* ```python
+  ```python
   import mpi4py as MPI
   import numpy as np
   
@@ -406,8 +382,6 @@ print(str(probability) + '%')
     print(' Rank 0: value_sum ', value_sum)
     print(' Rank 0: value_max ', value_max)
   ```
-
-
 
 *Example: Light-Gather*
 
